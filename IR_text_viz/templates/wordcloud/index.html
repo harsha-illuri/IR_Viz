@@ -1,0 +1,21 @@
+{%  load static %}
+
+<html>
+<head>
+    <link rel ="stylesheet" type = "text/css" href = "{% static 'wordcloud/main.css' %}">
+</head>>
+<div>
+<div id="word-cloud"> </div>
+
+    <script>
+        var data = "{{ data|safe }}"
+        console.log(data)
+    </script>
+    <script src="{% static 'wordcloud/script.js' %}" type="text/javascript">
+
+    </script>
+
+</div>
+
+
+</html>

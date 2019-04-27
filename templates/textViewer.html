@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{%  load static %}
+<html lang="en">
+<head>
+<link rel ="stylesheet" type = "text/css" href = "{% static 'wordcloud/main.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span.Cognition{
+            background-color: #4286f4;
+        }
+        span.Performance{
+            background-color: #ff9966;
+        }
+        span.Coordination{
+            background-color: #cca610;
+        }
+        span.Management{
+            background-color: #08b20e;
+        }
+        span.Control{
+            background-color: #ed76b3;
+        }
+        span.Procedural&Team{
+            background-color: #ed2d43;
+        }
+        span.Communication{
+            background-color: #e0682c;
+        }
+        span.Information{
+            background-color: #d0d831;
+        }
+        span.Planning{
+            background-color: #12914f;
+        }
+        span.Resources{
+            background-color: #34d3e5;
+        }
+        span.Team&Organization{
+            background-color: #5c6de0;
+        }
+        span.Org-Coordination{
+            background-color: #b047e5;
+        }
+
+    </style>
+</head>
+<body>
+<div style="float: left; width:74%; padding:10px; height: 100vh; overflow: auto; background-color:#e8eaf7;">
+    {% block content %}
+
+    {% for d in data%}
+        {% for key,value in d.items %}
+              <span class = {{ value.class }}>{{value.text}}</span>
+        {% endfor %}
+        <br/>
+    {% endfor %}
+
+{% endblock %}
+</div>
+
+<div id="word-cloud" style="float:right; width: 25%; height: 100vh; background-color:#e3e6f7;">
+
+    <script>
+        var data = "{{ classes|safe }}"
+        console.log(data)
+    </script>
+    <script src="{% static 'wordcloud/script.js' %}" type="text/javascript">
+
+    </script>
+</div>
+
+</body>
+</html>
