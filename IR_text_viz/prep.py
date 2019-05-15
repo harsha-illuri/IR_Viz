@@ -28,6 +28,7 @@ class preprocess:
         return None
 
     def process_raw(self):
+        print('here')
         # os.remove('raw_data.h5')
         main_df = pd.DataFrame()
         if not os.path.isdir(self.process_path):

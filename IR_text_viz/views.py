@@ -13,6 +13,7 @@ def predictAndVisualize():
     pass
 import shutil
 def upload(request):
+
     if request.method == 'POST' and request.FILES['myfile']:
         shutil.rmtree('input')
         os.mkdir('input')
@@ -64,8 +65,8 @@ def upload(request):
         context = pickle.load(filehandler)
         # context = getContext()
         return render(request, "textViewer.html", context)
-    else:
-        return render(request, 'home.html')
+    print("asdasd ajksdh kajshd kjas h")
+    return render(request, 'home.html')
 
 
 
